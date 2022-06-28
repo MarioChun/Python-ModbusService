@@ -23,7 +23,7 @@ def ping_reboot():
             wf.write(KST.strftime(fmt)+' ----------- down!\n')
         time.sleep(3)
         if check > 10:
-            os.system("sudo reboot now") #os.system("sudo python tcp04.py")
+            os.system("sudo reboot now")
         return check+1
 
 with open("connect_env.txt", 'r') as fr :
