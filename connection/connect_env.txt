@@ -1,0 +1,6 @@
+server = 192.168.0.000:1885
+user = db server id
+password = db server password
+database = db name
+machine = machine code
+
