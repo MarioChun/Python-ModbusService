@@ -39,12 +39,12 @@ with open("connect_env.txt", 'r') as fr :
     password = row_password[0].replace('password = ', '')
     database = row_database[0].replace('database = ', '')
     mchcd = (row_machine[0].replace('machine = ', ''))[:-2]
-    proc_mchcd = str("'%s'" % mchcd) 
+proc_mchcd = str("'%s'" % mchcd) 
 
 try:
     conn = pymssql.connect(server[:-2], user[:-2], password[:-2], database[:-2], timeout = 3)
     cursor = conn.cursor()
-    cursor.execute('usp_modset01t_s01 %s' % proc_mchcd)
+    cursor.execute('proc_name' % proc_mchcd)
     time.sleep(0.1)
     row = cursor.fetchone()
     conn.commit()
